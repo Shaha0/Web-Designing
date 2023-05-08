@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dice
+        {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin-top: auto;
+            margin-left: auto;
+            margin-bottom: auto;
+            margin-right: auto;
+            border-radius: 20%;
+        }
+        #dice h1
+        {
+            text-align: center;
+            color: black;
+            padding-top: 20%;
+        }
+
+        button
+        {
+            width: 150px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            position: relative;
+            top: 90%;
+            right: 30%;
+        }
+    </style>
+    <script>
+        function rolls()
+        {
+            let prob= Math.floor(Math.random()*6)+1;
+            let rolled=document.getElementById("dic")
+            if (prob == 1){
+            rolled.innerHTML="*";
+            }
+            else if (prob == 2){
+            rolled.innerHTML="* *";
+            }
+            else if (prob == 3){
+            rolled.innerHTML="* * *";
+            }
+            else if (prob == 4){
+            rolled.innerHTML="* *<br> * *";
+            }
+            else if (prob == 5){
+            rolled.innerHTML="* * *<br> * * ";
+            }
+            else if (prob == 6){
+            rolled.innerHTML="* * * <br>* * *";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="dice"><h1 id="dic"></h1>
+    <button onclick="rolls()"> Roll Dice</button>
+</div>
+</body>
+</html>

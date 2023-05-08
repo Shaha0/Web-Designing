@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tic-tac-toe</title>
+<style>
+  .container {
+    text-align: center;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+
+}
+
+.row {
+    margin: 20px;
+    display: flex;
+    width: 350px;
+    flex-wrap: wrap ;
+}
+.box
+{
+  padding: 10px;
+  height: 80px;
+  text-align: center;
+  width: 80px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  font-size: 2em;
+  cursor: pointer;
+}
+.box:nth-child(3n) {
+  border-right: none;
+}
+.box:nth-child(6) ~ .box {
+  border-bottom: none;
+} 
+#bt
+{
+  visibility: hidden;
+}
+</style>
+<Script>
+  function display(a)
+{
+document.getElementById(a).innerHTML = document.getElementById("hiddenvalue").innerHTML;
+
+if (document.getElementById("hiddenvalue").innerHTML=="O")
+{
+    document.getElementById("hiddenvalue").innerHTML="X"
+}
+else
+{
+    document.getElementById("hiddenvalue").innerHTML="O"
+}
+
+check();
+}
+
+function check()
+    {
+if(document.getElementById("1").innerHTML=="O" && document.getElementById("2").innerHTML=="O" && document.getElementById("3").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("4").innerHTML=="O" && document.getElementById("5").innerHTML=="O" && document.getElementById("6").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("7").innerHTML=="O" && document.getElementById("8").innerHTML=="O" && document.getElementById("9").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("1").innerHTML=="O" && document.getElementById("4").innerHTML=="O" && document.getElementById("7").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("2").innerHTML=="O" && document.getElementById("5").innerHTML=="O" && document.getElementById("8").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("3").innerHTML=="O" && document.getElementById("6").innerHTML=="O" && document.getElementById("9").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("1").innerHTML=="O" && document.getElementById("5").innerHTML=="O" && document.getElementById("9").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("3").innerHTML=="O" && document.getElementById("5").innerHTML=="O" && document.getElementById("7").innerHTML=="O")
+{
+  document.getElementById("dec").innerHTML="O is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+
+<!-- For X -->
+else if(document.getElementById("1").innerHTML=="X" && document.getElementById("2").innerHTML=="X" && document.getElementById("3").innerHTML=="X")
+{
+  document.getElementById("dec").innerHTML="X is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("4").innerHTML=="X" && document.getElementById("5").innerHTML=="X" && document.getElementById("6").innerHTML=="X")
+{
+  document.getElementById("dec").innerHTML="X is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("7").innerHTML=="X" && document.getElementById("8").innerHTML=="X" && document.getElementById("9").innerHTML=="X")
+{
+  document.getElementById("dec").innerHTML="X is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("1").innerHTML=="X" && document.getElementById("4").innerHTML=="X" && document.getElementById("7").innerHTML=="X")
+{
+  document.getElementById("dec").innerHTML="X is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("2").innerHTML=="X" && document.getElementById("5").innerHTML=="X" && document.getElementById("8").innerHTML=="X")
+{
+  document.getElementById("dec").innerHTML="X is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("3").innerHTML=="X" && document.getElementById("6").innerHTML=="X" && document.getElementById("9").innerHTML=="X")
+{
+  document.getElementById("dec").innerHTML="X is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("1").innerHTML=="X" && document.getElementById("5").innerHTML=="X" && document.getElementById("9").innerHTML=="X")
+{
+  document.getElementById("dec").innerHTML="X is winner";
+  document.getElementById("bt").style.visibility="visible";
+}
+else if(document.getElementById("3").innerHTML=="X" && document.getElementById("5").innerHTML=="X" && document.getElementById("7").innerHTML=="X")
+{
+    document.getElementById("dec").innerHTML="X is winner";
+    document.getElementById("bt").style.visibility="visible";
+}
+
+}
+
+function reset()
+{
+  for (let j = 1; j <= 9; j++) {
+    document.getElementById(j.toString()).innerHTML = "";
+  }
+  document.getElementById("bt").style.visibility="hidden";
+  document.getElementById("dec").innerHTML="TIC-TAC-TOE";
+}
+</Script>
+
+</head>
+<body>
+  <p style="visibility: hidden;" id="hiddenvalue">X</p>
+  <h1 id="dec">TIC-TAC-TOE</h1>
+  <div class="container">
+  <div class="row">
+    <div class="box" id="1" onclick="display(1)"></div>
+    <div class="box" id="2" onclick="display(2)"></div>
+    <div class="box" id="3" onclick="display(3)"></div>
+    <div class="box" id="4" onclick="display(4)"></div>
+    <div class="box" id="5" onclick="display(5)"></div>
+    <div class="box" id="6" onclick="display(6)"></div>
+    <div class="box" id="7" onclick="display(7)"></div>
+    <div class="box" id="8" onclick="display(8)"></div>
+    <div class="box" id="9" onclick="display(9)"></div>
+  </div>
+</div>
+<button id="bt" onclick="reset()">Play Again</button>
+
+</body>
+</html>
